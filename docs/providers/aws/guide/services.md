@@ -37,7 +37,7 @@ comments/
 ```
 This makes sense since related functions usually use common infrastructure resources, and you want to keep those functions and resources together as a single unit of deployment, for better organization and separation of concerns.
 
-**Note:** Currently, every service will create a separate REST API on AWS API Gateway.  Due to a limitation with AWS API Gateway, you can only have a custom domain per one REST API.  If you plan on making a large REST API, please make note of this limitation.  Also, a fix is in the works and is a top priority.
+**Note:** Currently, every service will create a separate REST API on AWS API Gateway.  Due to a limitation with AWS API Gateway, you can only have a custom domain per one REST API.  If you plan on making a large REST API, please make note of this limitation.  Also, [a fix is in the works](https://github.com/serverless/serverless/issues/3078) and is a top priority.
 
 ## Creation
 
@@ -51,12 +51,18 @@ serverless create --template aws-nodejs --path myService
 Here are the available runtimes for AWS Lambda:
 
 * aws-nodejs
+* aws-nodejs-typescript
+* aws-nodejs-ecma-script
 * aws-python
+* aws-python3
+* aws-kotlin-jvm-maven
+* aws-kotlin-nodejs-gradle
 * aws-groovy-gradle
 * aws-java-gradle
 * aws-java-maven
 * aws-scala-sbt
 * aws-csharp
+* aws-fsharp
 
 Check out the [create command docs](../cli-reference/create) for all the details and options.
 
@@ -88,12 +94,14 @@ service: users
 
 provider:
   name: aws
-  runtime: nodejs4.3
+  runtime: nodejs6.10
   stage: dev # Set the default stage used. Default is dev
   region: us-east-1 # Overwrite the default region used. Default is us-east-1
   profile: production # The default profile to use with this service
   memorySize: 512 # Overwrite the default memory size. Default is 1024
-  deploymentBucket: com.serverless.${self:provider.region}.deploys # Overwrite the default deployment bucket
+  deploymentBucket:
+    name: com.serverless.${self:provider.region}.deploys # Overwrite the default deployment bucket
+    serverSideEncryption: AES256 # when using server-side encryption
   versionFunctions: false # Optional function versioning
   stackTags: # Optional CF stack tags
    key: value
@@ -156,7 +164,13 @@ Create this file and add event data so you can invoke your function with the dat
 
 When you deploy a Service, all of the Functions, Events and Resources in your `serverless.yml` are translated to an AWS CloudFormation template and deployed as a single CloudFormation stack.
 
-To deploy a service, use the `deploy` command:
+To deploy a service, first `cd` into the relevant service directory:
+
+```bash
+cd my-service
+```
+
+Then use the `deploy` command:
 
 ```bash
 serverless deploy
@@ -203,7 +217,7 @@ service: users
 
 provider:
   name: aws
-  runtime: nodejs4.3
+  runtime: nodejs6.10
   memorySize: 512
 
 …
@@ -220,8 +234,26 @@ service: users
 
 provider:
   name: aws
-  runtime: nodejs4.3
+  runtime: nodejs6.10
   memorySize: 512
 
 …
+```
+
+## Installing Serverless in an existing service
+
+If you already have a Serverless service, and would prefer to lock down the framework version using `package.json`, then you can install Serverless as follows:
+
+```bash
+# from within a service
+npm install serverless --save-dev
+```
+
+### Invoking Serverless locally
+
+To execute the locally installed Serverless executable you have to reference the binary out of the node modules directory.
+
+Example:
+```
+node ./node_modules/serverless/bin/serverless deploy
 ```

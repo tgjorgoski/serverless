@@ -86,7 +86,7 @@ resources:
     myDefaultRole:
       Type: AWS::IAM::Role
       Properties:
-        Path: /my/default/path
+        Path: /my/default/path/
         RoleName: MyDefaultRole
         AssumeRolePolicyDocument:
           Version: '2012-10-17'
@@ -109,7 +109,14 @@ resources:
                     - logs:CreateLogGroup
                     - logs:CreateLogStream
                     - logs:PutLogEvents
-                  Resource: arn:aws:logs:${region}:${accountId}:log-group:/aws/lambda/*:*:*
+                  Resource:
+                    - 'Fn::Join':
+                      - ':'
+                      -
+                        - 'arn:aws:logs'
+                        - Ref: 'AWS::Region'
+                        - Ref: 'AWS::AccountId'
+                        - 'log-group:/aws/lambda/*:*:*'
                 -  Effect: "Allow"
                    Action:
                      - "s3:PutObject"
@@ -142,7 +149,7 @@ resources:
     myCustRole0:
       Type: AWS::IAM::Role
       Properties:
-        Path: /my/cust/path
+        Path: /my/cust/path/
         RoleName: MyCustRole0
         AssumeRolePolicyDocument:
           Version: '2012-10-17'
@@ -162,7 +169,14 @@ resources:
                     - logs:CreateLogGroup
                     - logs:CreateLogStream
                     - logs:PutLogEvents
-                  Resource: arn:aws:logs:${region}:${accountId}:log-group:/aws/lambda/*:*:*
+                  Resource: 
+                    - 'Fn::Join':
+                      - ':'
+                      -
+                        - 'arn:aws:logs'
+                        - Ref: 'AWS::Region'
+                        - Ref: 'AWS::AccountId'
+                        - 'log-group:/aws/lambda/*:*:*'
                 - Effect: Allow
                   Action:
                     - ec2:CreateNetworkInterface
@@ -173,7 +187,7 @@ resources:
     myCustRole1:
       Type: AWS::IAM::Role
       Properties:
-        Path: /my/cust/path
+        Path: /my/cust/path/
         RoleName: MyCustRole1
         AssumeRolePolicyDocument:
           Version: '2012-10-17'
@@ -193,7 +207,14 @@ resources:
                     - logs:CreateLogGroup
                     - logs:CreateLogStream
                     - logs:PutLogEvents
-                  Resource: arn:aws:logs:${region}:${accountId}:log-group:/aws/lambda/*:*:*
+                  Resource: 
+                    - 'Fn::Join':
+                      - ':'
+                      -
+                        - 'arn:aws:logs'
+                        - Ref: 'AWS::Region'
+                        - Ref: 'AWS::AccountId'
+                        - 'log-group:/aws/lambda/*:*:*'
                 -  Effect: "Allow"
                    Action:
                      - "s3:PutObject"
@@ -225,7 +246,7 @@ resources:
     myDefaultRole:
       Type: AWS::IAM::Role
       Properties:
-        Path: /my/default/path
+        Path: /my/default/path/
         RoleName: MyDefaultRole
         AssumeRolePolicyDocument:
           Version: '2012-10-17'
@@ -245,7 +266,14 @@ resources:
                     - logs:CreateLogGroup
                     - logs:CreateLogStream
                     - logs:PutLogEvents
-                  Resource: arn:aws:logs:${region}:${accountId}:log-group:/aws/lambda/*:*:*
+                  Resource: 
+                    - 'Fn::Join':
+                      - ':'
+                      -
+                        - 'arn:aws:logs'
+                        - Ref: 'AWS::Region'
+                        - Ref: 'AWS::AccountId'
+                        - 'log-group:/aws/lambda/*:*:*'
                 -  Effect: "Allow"
                    Action:
                      - "s3:PutObject"
@@ -257,7 +285,7 @@ resources:
     myCustRole0:
       Type: AWS::IAM::Role
       Properties:
-        Path: /my/cust/path
+        Path: /my/cust/path/
         RoleName: MyCustRole0
         AssumeRolePolicyDocument:
           Version: '2012-10-17'
@@ -277,7 +305,14 @@ resources:
                     - logs:CreateLogGroup
                     - logs:CreateLogStream
                     - logs:PutLogEvents
-                  Resource: arn:aws:logs:${region}:${accountId}:log-group:/aws/lambda/*:*:*
+                  Resource: 
+                    - 'Fn::Join':
+                      - ':'
+                      -
+                        - 'arn:aws:logs'
+                        - Ref: 'AWS::Region'
+                        - Ref: 'AWS::AccountId'
+                        - 'log-group:/aws/lambda/*:*:*'
                 - Effect: Allow
                   Action:
                     - ec2:CreateNetworkInterface

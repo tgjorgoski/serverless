@@ -1,3 +1,267 @@
+# 1.23.0 (21.09.2017)
+- [Obey VIRTUAL_ENV on Windows](https://github.com/serverless/serverless/pull/4286)
+- [Implement pinging for the CLI login](https://github.com/serverless/serverless/pull/4206)
+- [Fixed a bug with deploy function not inheriting provider config](https://github.com/serverless/serverless/pull/4262)
+- [Added Auth0 Webtasks Provider Template for Nodejs](https://github.com/serverless/serverless/pull/4283)
+- [Added Java support for invoke local](https://github.com/serverless/serverless/pull/4199)
+
+## Meta
+- [Comparison since last release](https://github.com/serverless/serverless/compare/v1.22.0...v1.23.0)
+
+
+# 1.22.0 (13.09.2017)
+- [Serverless now fails if provided profile is not valid](https://github.com/serverless/serverless/pull/4245)
+- [Removed escaping of double quotes around string values in Serverless Variables](https://github.com/serverless/serverless/pull/4224)
+- [Added 4 new plugin commands](https://github.com/serverless/serverless/pull/4046)
+- [Added aws-kotlin-jvm-marven template](https://github.com/serverless/serverless/pull/4220)
+- [Added --update-config option to deploy function command](https://github.com/serverless/serverless/pull/4173)
+- [Added description to CloudWatch Events](https://github.com/serverless/serverless/pull/4221)
+- [Added support for aliasing commands](https://github.com/serverless/serverless/pull/4198)
+- [Added --function option to deploy command](https://github.com/serverless/serverless/pull/4192)
+- [Fixed a bug with Kinesis events](https://github.com/serverless/serverless/pull/4084)
+- [Fixed a bug with packaging](https://github.com/serverless/serverless/pull/4189)
+
+
+## Meta
+- [Comparison since last release](https://github.com/serverless/serverless/compare/v1.21.1...v1.22.0)
+
+
+# 1.21.1 (06.09.2017)
+- [Preserve file encoding during packaging process](https://github.com/serverless/serverless/pull/4189)
+
+## Meta
+- [Comparison since last release](https://github.com/serverless/serverless/compare/v1.21.0...v1.21.1)
+
+
+# 1.21.0 (30.08.2017)
+- [Allow custom CLI class instances](https://github.com/serverless/serverless/pull/4160)
+- [Add support in Spotinst Functions](https://github.com/serverless/serverless/pull/4127)
+- [Add PHP support for OpenWhisk](https://github.com/serverless/serverless/pull/4153)
+- [Fixed a bug with stack deletion monitoring](https://github.com/serverless/serverless/pull/4132)
+- [Allow AWS Profile CLI option to overwrite config and env](https://github.com/serverless/serverless/pull/3980)
+- [Improve performance of the package plugin](https://github.com/serverless/serverless/pull/3924)
+- [Add support for custom context with Invoke Local](https://github.com/serverless/serverless/pull/4126)
+- [Add aws-nodejs-typescript template](https://github.com/serverless/serverless/pull/4058)
+- [Add aws-nodejs-ecma-script template](https://github.com/serverless/serverless/pull/4056)
+- [Allow updates for AWS profiles](https://github.com/serverless/serverless/pull/3866)
+- [Fixed a bug in Invoke Local when using Python in Windows](https://github.com/serverless/serverless/pull/3832)
+- [Fixed a bug with the Variable System overwrites](https://github.com/serverless/serverless/pull/4097)
+
+## Meta
+- [Comparison since last release](https://github.com/serverless/serverless/compare/v1.20.2...v1.21.0)
+
+
+# 1.20.2 (17.08.2017)
+- [Bump event-gateway version to 0.5.15](https://github.com/serverless/serverless/pull/4116)
+
+## Meta
+- [Comparison since last release](https://github.com/serverless/serverless/compare/v1.20.1...v1.20.2)
+
+
+# 1.20.1 (17.08.2017)
+- [Rethrow original plugin error in debug mode](https://github.com/serverless/serverless/pull/4091)
+- [Add platform gate to serverless run / emit](https://github.com/serverless/serverless/pull/4103)
+
+## Meta
+- [Comparison since last release](https://github.com/serverless/serverless/compare/v1.20.0...v1.20.1)
+
+
+# 1.20.0 (16.08.2017)
+- [Add Serverless Run plugin](https://github.com/serverless/serverless/pull/4034)
+- [Add Serverless Emit plugin](https://github.com/serverless/serverless/pull/4038)
+- [Kubeless template for python and nodejs](https://github.com/serverless/serverless/pull/3970)
+- [Improve deprecation hook message](https://github.com/serverless/serverless/pull/4011)
+
+## Meta
+- [Comparison since last release](https://github.com/serverless/serverless/compare/v1.19.0...v1.20.0)
+
+
+# 1.19.0 (02.08.2017)
+- [Removed provider name validation](https://github.com/serverless/serverless/pull/3941)
+- [Fixed a bug with dev dependencies exclusion](https://github.com/serverless/serverless/pull/3975)
+- [Fixed a bug with "deploy list functions"](https://github.com/serverless/serverless/pull/3971)
+- [Fixed a bug with Serverless Plugins loading](https://github.com/serverless/serverless/pull/3960)
+
+## Meta
+- [Comparison since last release](https://github.com/serverless/serverless/compare/v1.18.1...v1.19.0)
+
+
+# 1.18.1 (28.07.2017)
+- [Fixed a bug with Serverless Variables](https://github.com/serverless/serverless/pull/3996)
+- [Fixed a bug with dev dependencies exclusion](https://github.com/serverless/serverless/pull/3975)
+
+## Meta
+- [Comparison since last release](https://github.com/serverless/serverless/compare/v1.18.0...v1.18.1)
+
+
+# 1.18.0 (20.07.2017)
+- [Added support for a new "default" property for Plugins CLI options](https://github.com/serverless/serverless/pull/3808)
+- [Fixed a bug with dev dependencies exclusion](https://github.com/serverless/serverless/pull/3889)
+- [Added support for a new "publish" property to opt-out from Platform publishing](https://github.com/serverless/serverless/pull/3950)
+- [Fixed a bug with "sls remove" when the stack includes Exports](https://github.com/serverless/serverless/pull/3935)
+- [Added support for request parameter configuration with lambda-proxy integration](https://github.com/serverless/serverless/pull/3722)
+- [Enhanced the environment variables for invoke local to include AWS_REGION](https://github.com/serverless/serverless/pull/3908)
+- [Updated the deploy command to ignore custom plugins in service directory during deployment](https://github.com/serverless/serverless/pull/3910)
+- [Fixed a bug with function packaging](https://github.com/serverless/serverless/pull/3856)
+- [Updated the package command to ignore function packaging if a custom artifact is specified](https://github.com/serverless/serverless/pull/3876)
+- [Added support for absolute paths when using Serverless Variables file references](https://github.com/serverless/serverless/pull/3888)
+
+
+## Meta
+- [Comparison since last release](https://github.com/serverless/serverless/compare/v1.17.0...v1.18.0)
+
+
+# 1.17.0 (05.07.2017)
+- Cleanup F# build template output on macOS - #3897
+- Add disable flag for OpenWhisk functions - #3830
+- Only redeploy when the code/config changes - #3838
+- Add opt-out config for dev dependency exclusion - #3877
+- Add infinite stack trace for errors - #3839
+- Fixed a bug with autocomplete - #3798
+
+
+## Meta
+- [Comparison since last release](https://github.com/serverless/serverless/compare/v1.16.1...v1.17.0)
+
+
+# 1.16.1 (26.06.2017)
+- CI/CD fix for the Serverless Platform - #3829
+
+## Meta
+- [Comparison since last release](https://github.com/serverless/serverless/compare/v1.16.0...v1.16.1)
+
+
+# 1.16.0 (21.06.2017)
+- Added support for usage plans to APIG - #3819
+- Optmizied packaging to exclude dev dependencies - #3737
+- Added support for S3 server side encryption - #3804
+- Improved HTTP error handling - #3752
+- Throw an error when requsted CF variable doesn't exist - #3739
+- Throw an error if an individual package is empty - #3729
+
+## Meta
+- [Comparison since last release](https://github.com/serverless/serverless/compare/v1.15.0...v1.16.0)
+
+
+# 1.15.3 (12.06.2017)
+- Fixed autocomplete bug with help option - #3781
+
+## Meta
+- [Comparison since last release](https://github.com/serverless/serverless/compare/v1.15.2...v1.15.3)
+
+
+# 1.15.2 (10.06.2017)
+- Fixed installation error - #3763
+
+## Meta
+- [Comparison since last release](https://github.com/serverless/serverless/compare/v1.15.0...v1.15.2)
+
+
+# 1.15.0 (08.06.2017)
+- Added autocomplete support to the CLI - #3753
+- Added KMS key support - #3672
+- Added Cognito User pool support - #3657
+- Added serverless.json support - #3647
+- Added aws-profile support - #3701
+- Added CloudFormation validation support - #3668
+- Fixed S3 event race condition bug - #3705
+- Fixed CORS origin config bug - #3692
+
+## Meta
+- [Comparison since last release](https://github.com/serverless/serverless/compare/v1.14.0...v1.15.0)
+
+# 1.14.0 (24.05.2017)
+- Added login command - #3558
+- Added support for DeadLetter Config with SNS - #3609
+- Added support for S3 variables - #3592
+- Added rollback function command - #3571
+- Added `X-Amz-User-Agent` to list of allowed headers in CORS - #3614
+- Added support for HTTP_PROXY API Gateway integration - #3534
+- Added IS_LOCAL environment variable with invoke local command - #3642
+- Removed package.json in exclude rules - #3644
+
+
+## Meta
+- [Comparison since last release](https://github.com/serverless/serverless/compare/v1.13.2...v1.14.0)
+
+
+# 1.13.2 (15.05.2017)
+- Fixed a bug when using dot notation in YAML keys (#3620)
+
+## Meta
+- [Comparison since last release](https://github.com/serverless/serverless/compare/v1.13.1...v1.13.2)
+
+
+# 1.13.1 (12.05.2017)
+- Fixed bug when referencing variables from other variable object values (#3604)
+- Fixed bug when packaging a functions-free service (#3598)
+
+## Meta
+- [Comparison since last release](https://github.com/serverless/serverless/compare/v1.13.0...v1.13.1)
+
+
+# 1.13.0 (10.05.2017)
+- Added support for cross service communication via CloudFormation outputs (#3575)
+- Add Lambda tagging functionality (#3548)
+- Added support for Promises in the variable system (#3554)
+- Added hello-world template (#3445)
+- Improved Info plugins lifecylce events for plugin authors (#3507)
+- Allow service to be specified as object in serverless.yml (#3521)
+
+## Meta
+- [Comparison since last release](https://github.com/serverless/serverless/compare/v1.12.0...v1.13.0)
+
+# 1.12.1 (27.04.2017)
+- Fix bug when using the package command with the variable system (#3527)
+
+## Meta
+- [Comparison since last release](https://github.com/serverless/serverless/compare/v1.12.0...v1.12.1)
+
+# 1.12.0 (26.04.2017)
+- Separated packaging and deployment with a new package command (#3344)
+- Extend OpenWhisk runtime support (#3454)
+- Upgrade gradle wrapper to 3.5 (#3466)
+- Fixed bug when using event streams with custom roles (#3457)
+- Fixed bug with SNS events (#3443)
+- Fixed bug when using custom deployment bucket (#3479)
+- Added support for Python 3.6 for Lambda (#3483)
+- Added new syntax to specify ARN for SNS events (#3505)
+
+# 1.11.0 (12.04.2017)
+- Add CloudWatch Logs Event Source (#3407)
+- Add version description from function (#3429)
+- Add support for packaging functions individually (#3433)
+
+## Meta
+- [Comparison since last release](https://github.com/serverless/serverless/compare/v1.10.2...v1.11.0)
+
+
+# 1.10.2 (3.04.2017)
+- Add support for packaging functions individually at the function level (#3433)
+
+# 1.10.1 (30.03.2017)
+- Update serverless-alpha detection (#3423)
+
+## Meta
+- [Comparison since last release](https://github.com/serverless/serverless/compare/v1.10.0...v1.10.1)
+
+
+# 1.10.0 (29.03.2017)
+- Fixed bug with ANY http method (#3304)
+- Reduced unit test time significantly (#3359)
+- Added AWS Groovy Gradle Template (#3353)
+- Reduce dependency tree depth between IAM & Log Groups (#3360)
+- Added entrypoints for plugins (#3327)
+- Removed pre-install script (#3385)
+- Expose plugin hooks  (#2985)
+- Add support for Node 6 runtime in invoke local (#3403)
+- Updated Node.js templates to include Node 6 runtime by default (#3406)
+- Removed breaking changes warnings (#3418)
+- Auto loading serverless-alpha plugin (#3373)
+
+## Meta
+- [Comparison since last release](https://github.com/serverless/serverless/compare/v1.9.0...v1.10.0)
+
 # 1.9.0 (14.03.2017)
 - Fixed bug with serverless plugins lookup (#3180)
 - Fixed bug with `serverless create` generated .gitignore (#3355)
